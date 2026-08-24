@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+ <html>
+     <head>
+        <title>自我簡歷網站</title> 
+        <link rel="stylesheet" href="/static/style.css">
+    </head> 
+    <body> 
+        <h1>自我簡歷網站</h1> 
+            <a href="/about">關於我</a>
+            <a href="https://github.com/esan000623">GitHub</a>
+            <h2>我的興趣:
+                <p>
+                {% for hobby in hobbies %}
+                    {{ hobby }}{%if not loop.last%}、{%endif%}
+                {% endfor %}
+                </p>
+            </h2>
+
+            <h3>我的技能:
+                <p>
+                {% for skill in skills %}
+                    {{ skill }}{%if not loop.last%}、{%endif%}
+                {% endfor %}
+                </p>
+            </h3>
+
+            <h4>我的mail: 
+                <span class="email">b1443006@ems.niu.edu.tw</span>
+            </h4>
+
+            <form action="/" method="POST">
+                <p>留言給我的話:</p>
+                <label>姓名:</label>
+                <input type="text" name="username">
+                <label>留言的話:</label>
+                <input type="text" name="message">
+                <button>送出</button>
+            </form>
+            
+            <h5>留言板({{message_count}}則留言):
+                
+                {% with flashed_messages = get_flashed_messages() %}
+                    {% for flash_message in flashed_messages %}
+                        <p class="flash-message">{{flash_message}}</p>
+                    {% endfor %}
+                {% endwith %}
+
+                {% for message in messages %}
+                    <p>
+                    {{ message.username }}留言:{{ message.message }}  時間:{{message.time}}
+                    </p>
+
+                    <form action="/delete/{{message['id'] }}" method="POST">
+                        <button type="submit">刪除留言</button>
+                    </form>
+
+                    <form action="{{url_for('edit', id=message['id'])}}" method="GET">
+                        <button type="submit">編輯留言</button>
+                    </form>
+                {% endfor %}
+
+            </h5>
+    </body>
+ </html>
+
+
+
+ 

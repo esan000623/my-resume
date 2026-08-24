@@ -1,0 +1,67 @@
+body {
+    text-align:center;
+    background-color: #0f172a;
+}
+
+h1{
+    font-size:60px;
+    background-color:#fcfdfe;
+}
+
+h2 {
+    font-size:40px;
+    background-color:#fcfdfe;
+}
+
+h3 {
+    font-size:40px;
+    background-color:#fcfdfe;
+}
+
+h4 {
+    font-size:40px;
+    background-color:#fcfdfe;
+}
+
+h5 {
+    font-size:40px;
+    background-color:#fcfdfe;
+}
+
+p {
+    font-size:30px;
+    background-color:#fcfdfe;
+}
+
+form{
+    font-size:30px;
+    background-color:#fcfdfe;
+}
+
+a{
+    font-size:30px;
+    background-color:#fcfdfe;
+}
+.profile-photo{
+    width:200px;
+    height:200px;
+    object-fit:cover;
+    border-radius:50%;
+    display:block;
+    margin-left:0;
+    margin-right:auto;
+    position:absolute;
+    top:0px;
+    left:10px;
+}
+.email{
+    font-size:28px;
+}
+.flash-message{
+    padding:10px;
+    margin: 10px 0;
+    border-radius:8px;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    font-weight:bold;
+}
